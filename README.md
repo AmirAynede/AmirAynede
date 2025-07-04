@@ -1,3 +1,14 @@
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)"
+      srcset="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/github-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)"
+      srcset="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/github-snake.svg">
+    <img src="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/github-snake.svg"
+         alt="GitHub Contribution Snake">
+  </picture>
+</div>
+
 <h1 align="center">Hi there, I am Amir</h1>
 
 <p align="center">
