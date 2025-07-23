@@ -38,6 +38,7 @@ I am interested in:
 ## My Projects
 
 ### [LC25000-Cancer-Classification](https://github.com/AmirAynede/LC25000-Cancer-Classification)
+### [LC25000-Cancer-Classification-Automated-Pipeline](https://github.com/AmirAynede/LC25000-Cancer-Classification-Automated-Pipeline)
 ### [DNA-RNA-Dynamics-Project](https://github.com/AmirAynede/DNA-RNA-Dynamics-Project)
 ### [Big-Data-Processing-Infrastructures](https://github.com/AmirAynede/Big-Data-Processing-Infrastructures)
 ### [Biomedical-Data-Bases](https://github.com/AmirAynede/Biomedical-Data-Bases)
