@@ -15,7 +15,7 @@
   <a href="https://github.com/AmirAynede" target="_blank">
     <img src="https://img.shields.io/github/followers/AmirAynede?label=Follow&style=social" alt="GitHub Follow">
   </a>
-  <a href="mailto:your.email@domain.com" target="_blank">
+  <a href="amiraynede@gmail.com" target="_blank">
     <img src="https://img.shields.io/badge/email-Contact-blue?style=flat&logo=gmail" alt="Email">
   </a>
 </p>
