@@ -1,19 +1,13 @@
 <div align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Protein_rotation.gif"
-       alt="Rotating Protein Structure"
-       width="450" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)"
+      srcset="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/github-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)"
+      srcset="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/github-snake.svg">
+    <img src="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/github-snake.svg"
+         alt="GitHub Contribution Snake">
+  </picture>
 </div>
-
-<h1 align="center">Hi there, I am Amir</h1>
-
-<p align="center">
-  <a href="https://github.com/AmirAynede" target="_blank">
-    <img src="https://img.shields.io/github/followers/AmirAynede?label=Follow&style=social" alt="GitHub Follow">
-  </a>
-  <a href="mailto:amiraynede@gmail.com" target="_blank">
-    <img src="https://img.shields.io/badge/email-Contact-blue?style=flat&logo=gmail" alt="Email">
-  </a>
-</p>
 
 
 
