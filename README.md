@@ -1,13 +1,14 @@
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)"
-      srcset="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/github-snake-dark.svg">
+      srcset="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/matrix-dark.svg">
     <source media="(prefers-color-scheme: light)"
-      srcset="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/github-snake.svg">
-    <img src="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/github-snake.svg"
-         alt="GitHub Contribution Snake">
+      srcset="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/matrix.svg">
+    <img src="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/matrix.svg"
+         alt="Matrix Code Rain Animation">
   </picture>
 </div>
+
 
 
 
