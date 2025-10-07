@@ -1,14 +1,11 @@
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)"
-      srcset="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/matrix-dark.svg">
-    <source media="(prefers-color-scheme: light)"
-      srcset="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/matrix.svg">
-    <img src="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/matrix.svg"
-         alt="Matrix Code Rain Animation">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AmirAynede/AmirAynede/main/assets/matrix.gif">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AmirAynede/AmirAynede/main/assets/matrix.gif">
+    <img src="https://raw.githubusercontent.com/AmirAynede/AmirAynede/main/assets/matrix.gif" 
+         alt="Matrix Code Rain Animation" width="600">
   </picture>
 </div>
-
 
 
 
