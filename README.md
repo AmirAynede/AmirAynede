@@ -1,6 +1,7 @@
 <div align="center">
-  <img src="https://github.com/AmirAynede/AmirAynede/assets/123456789/protein-rotate.gif" 
-       alt="Rotating Protein Structure" width="500" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Protein_rotation.gif"
+       alt="Rotating Protein Structure"
+       width="450" />
 </div>
 
 <h1 align="center">Hi there, I am Amir</h1>
@@ -13,6 +14,7 @@
     <img src="https://img.shields.io/badge/email-Contact-blue?style=flat&logo=gmail" alt="Email">
   </a>
 </p>
+
 
 
 ---
