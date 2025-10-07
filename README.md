@@ -1,12 +1,6 @@
 <div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)"
-      srcset="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/github-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)"
-      srcset="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/github-snake.svg">
-    <img src="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/github-snake.svg"
-         alt="GitHub Contribution Snake">
-  </picture>
+  <img src="https://github.com/AmirAynede/AmirAynede/assets/123456789/protein-rotate.gif" 
+       alt="Rotating Protein Structure" width="500" />
 </div>
 
 <h1 align="center">Hi there, I am Amir</h1>
@@ -15,10 +9,11 @@
   <a href="https://github.com/AmirAynede" target="_blank">
     <img src="https://img.shields.io/github/followers/AmirAynede?label=Follow&style=social" alt="GitHub Follow">
   </a>
-  <a href="amiraynede@gmail.com" target="_blank">
+  <a href="mailto:amiraynede@gmail.com" target="_blank">
     <img src="https://img.shields.io/badge/email-Contact-blue?style=flat&logo=gmail" alt="Email">
   </a>
 </p>
+
 
 ---
 
