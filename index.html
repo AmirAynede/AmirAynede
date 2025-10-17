@@ -12,6 +12,7 @@
     }
     canvas {
       display: block;
+      filter: brightness(1.2) contrast(1.1);
     }
   </style>
 </head>
@@ -33,11 +34,13 @@
     let nameTimer = 0;
     let activeName = "";
     let activeColumn = -1;
+    let hue = 120; // start green
 
     function draw() {
       ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+      // Matrix binary rain
       ctx.fillStyle = "#0F0";
       ctx.font = fontSize + "px monospace";
 
@@ -50,6 +53,7 @@
         drops[i]++;
       }
 
+      // Random name spawn logic
       nameTimer--;
       if (nameTimer <= 0) {
         activeName = names[Math.floor(Math.random() * names.length)];
@@ -57,14 +61,24 @@
         nameTimer = 80 + Math.random() * 100;
       }
 
+      // Smooth color pulse for name
+      hue += 1;
+      if (hue > 360) hue = 0;
+      const glowColor = `hsl(${hue}, 100%, 60%)`;
+
+      // Draw the glowing name
       if (activeName && activeColumn >= 0) {
-        ctx.fillStyle = "#00FF80";
-        ctx.font = "bold " + (fontSize + 2) + "px monospace";
+        ctx.save();
+        ctx.shadowColor = glowColor;
+        ctx.shadowBlur = 15;
+        ctx.fillStyle = glowColor;
+        ctx.font = "bold " + (fontSize + 3) + "px monospace";
         ctx.fillText(
           activeName,
           activeColumn * fontSize,
           (drops[activeColumn] * fontSize) % canvas.height
         );
+        ctx.restore();
       }
     }
 
