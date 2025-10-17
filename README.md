@@ -1,18 +1,3 @@
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AmirAynede/AmirAynede/main/assets/matrix.gif">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AmirAynede/AmirAynede/main/assets/matrix.gif">
-    <img src="https://raw.githubusercontent.com/AmirAynede/AmirAynede/main/assets/matrix.gif" 
-         alt="Matrix Code Rain Animation" width="600">
-  </picture>
-</div>
-
----
-
-<p align="center">
-  💫 <a href="https://amiraynede.github.io/AmirAynede/" target="_blank">
-  <b>Live Neon Matrix Animation — AMIR AYNEDE</b></a>
-</p>
 
 
 ---
