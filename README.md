@@ -17,6 +17,7 @@ I am interested in:
 
 ## My Projects
 
+### [LB2-project-Group-1](https://github.com/AmirAynede/LB2-project-Group-1)
 ### [LC25000-Cancer-Classification](https://github.com/AmirAynede/LC25000-Cancer-Classification)
 ### [LC25000-Cancer-Classification-Automated-Pipeline](https://github.com/AmirAynede/LC25000-Cancer-Classification-Automated-Pipeline)
 ### [DNA-RNA-Dynamics-Project](https://github.com/AmirAynede/DNA-RNA-Dynamics-Project)
