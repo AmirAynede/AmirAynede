@@ -34,8 +34,19 @@ jobs:
       run: |
         git config user.name "github-actions"
         git config user.email "actions@github.com"
-        git pull
-        ls -lh  # show files for debugging
-        git add 3d_commits.gif || echo "No gif to add"
-        git commit -m "Update 3D commit graph GIF" --allow-empty
-        git push
+        git fetch origin main
+        git checkout main
+        git pull origin main
+        ls -lh
+        echo "---- FILES IN WORK DIR ----"
+        ls -lah
+        if [ -f "3d_commits.gif" ]; then
+          echo "✅ Found 3d_commits.gif, committing..."
+          git add 3d_commits.gif
+          git commit -m "Update 3D commit graph GIF" --allow-empty
+          git push origin main
+        else
+          echo "❌ No 3d_commits.gif found after generation!"
+          exit 1
+        fi
+
