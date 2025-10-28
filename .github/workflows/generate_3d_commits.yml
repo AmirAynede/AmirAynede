@@ -34,6 +34,8 @@ jobs:
       run: |
         git config user.name "github-actions"
         git config user.email "actions@github.com"
-        git add 3d_commits.gif
-        git commit -m "Update 3D commit graph GIF" || echo "No changes to commit"
+        git pull
+        ls -lh  # show files for debugging
+        git add 3d_commits.gif || echo "No gif to add"
+        git commit -m "Update 3D commit graph GIF" --allow-empty
         git push
