@@ -5,12 +5,8 @@ from datetime import timedelta
 from collections import Counter
 import os
 from matplotlib import animation
-from matplotlib import rc
+import time
 
-# Disable inline HTML rendering in Actions
-rc('animation', html='none')
-
-# --- GitHub setup ---
 token = os.getenv("GITHUB_TOKEN")
 username = os.getenv("GITHUB_ACTOR")
 
@@ -37,6 +33,9 @@ if not dates:
 print(f"✅ Found {len(dates)} total commits.")
 
 # --- Process commit data ---
+from datetime import timedelta
+from collections import Counter
+
 counter = Counter(dates)
 start = min(counter.keys())
 end = max(counter.keys())
@@ -46,7 +45,7 @@ values = [counter.get(day, 0) for day in all_days]
 weeks = len(all_days) // 7
 Z = np.array(values[:weeks * 7]).reshape(weeks, 7)
 
-# --- Build 3D chart ---
+# --- Plot setup ---
 plt.style.use('dark_background')
 fig = plt.figure(figsize=(14, 5))
 ax = fig.add_subplot(111, projection='3d')
@@ -67,15 +66,29 @@ ax.set_title(f'{username} GitHub Commits (3D)', pad=20)
 
 plt.tight_layout()
 
-# --- Animate rotation ---
+# --- Animation ---
 def rotate(angle):
     ax.view_init(elev=30, azim=angle)
 
 anim = animation.FuncAnimation(fig, rotate, frames=np.arange(0, 360, 3), interval=100)
 
-# --- Save GIF in repo root ---
+# --- Save explicitly to repo root ---
 output_path = os.path.join(os.getcwd(), "3d_commits.gif")
+print(f"💾 Saving to: {output_path}")
+
 anim.save(output_path, writer="pillow", fps=20)
-print(f"🎥 3D commit GIF generated at: {output_path}")
+time.sleep(2)
+
+# --- Verify file ---
+if os.path.exists(output_path):
+    size_kb = os.path.getsize(output_path) / 1024
+    print(f"🎥 GIF generated successfully! Size: {size_kb:.2f} KB")
+else:
+    print("❌ GIF file not found after saving!")
+
+# --- Show directory contents ---
+print("\n📂 Files in current directory:")
+for f in os.listdir(os.getcwd()):
+    print(" -", f)
 
 plt.close(fig)
