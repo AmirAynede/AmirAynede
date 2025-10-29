@@ -1,4 +1,4 @@
-### 🧱 3D Commit Graph
+### 3D Commit Graph
 ![3D Commit Graph](3d_commits.gif)
 
 
