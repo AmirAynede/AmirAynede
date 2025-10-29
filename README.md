@@ -42,11 +42,3 @@ I am interested in:
 [![GitHub](https://img.shields.io/badge/GitHub-AmirAynede-black?logo=github)](https://github.com/AmirAynede)
 
 ---
-
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/github-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/github-snake.svg">
-    <img alt="GitHub Contribution Snake" src="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/github-snake.svg" />
-  </picture>
-</div>
