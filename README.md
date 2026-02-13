@@ -1,5 +1,9 @@
 ### 3D Commit Graph
-![3D Commit Graph](3d_commits.gif)
+<div align="center">
+  <img src="3d_commits.gif" width="600" alt="3D Contribution Graph" />
+  <br/>
+  <sub>Data updated daily via GitHub Actions</sub>
+</div>
 
 
 ---
