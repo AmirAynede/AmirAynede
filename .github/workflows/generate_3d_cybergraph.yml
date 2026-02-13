@@ -1,51 +1,51 @@
-name: Generate 3D Cyber Graph
+name: Generate 3D Cyber Graph (Final Fix)
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # Runs every day at midnight UTC
-  workflow_dispatch:      # Allows you to click 'Run workflow' manually
+    - cron: "0 0 * * *"
+  workflow_dispatch:
 
 permissions:
-  contents: write         # REQUIRED to allow the bot to commit the new image
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout the repository content
+      # 1. Checkout your main code
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      # 2. Set up Python environment
+      # 2. Set up Python
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
 
-      # 3. Install dependencies (Matplotlib, Pillow, etc.)
+      # 3. Install the tools we need
       - name: Install dependencies
         run: |
           sudo apt-get install -y ffmpeg
           pip install matplotlib PyGithub numpy pillow
 
-      # 4. Run your Python script
-      - name: Generate 3D commit graph GIF
+      # 4. Run your custom Python script
+      - name: Generate GIF
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_ACTOR: ${{ github.actor }}
         run: |
           python github_3d_commits.py
 
-      # 5. Commit and push the new "cyber_graph.gif"
-      - name: Commit and push updated GIF
+      # 5. Force save the GIF to the main branch
+      - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Force add the new file we just generated
-          git add cyber_graph.gif
+          # Force add the file (ignores .gitignore)
+          git add -f cyber_graph.gif
           
-          # Commit only if there are changes
-          git commit -m "Update Cyber Graph GIF" || echo "No changes to commit"
+          # Commit and push
+          git commit -m "Update Cyber Graph" || echo "No changes to commit"
           git push
