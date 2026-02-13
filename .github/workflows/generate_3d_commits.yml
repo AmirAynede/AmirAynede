@@ -2,27 +2,34 @@ name: Generate 3D GitHub Commit Graph (GIF)
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # Runs daily at midnight UTC
-  workflow_dispatch:      # Allows manual trigger
+    - cron: "0 0 * * *"  # Runs every day at midnight
+  workflow_dispatch:      # Allows you to click a button to run it manually
+
+permissions:
+  contents: write         # Gives permission to commit the GIF back to the repo
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+    # 1. Get your code
     - name: Checkout repo
       uses: actions/checkout@v4
 
+    # 2. Install Python
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: "3.10"
 
+    # 3. Install the tools (Updated with 'pillow' for GIFs)
     - name: Install dependencies
       run: |
         sudo apt-get install -y ffmpeg
         pip install matplotlib PyGithub numpy pillow
 
+    # 4. Run the script to create the GIF
     - name: Generate 3D commit graph GIF
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -30,23 +37,12 @@ jobs:
       run: |
         python github_3d_commits.py
 
+    # 5. Save the GIF back to your repo
     - name: Commit and push updated GIF
       run: |
-        git config user.name "github-actions"
-        git config user.email "actions@github.com"
-        git fetch origin main
-        git checkout main
-        git pull origin main
-        ls -lh
-        echo "---- FILES IN WORK DIR ----"
-        ls -lah
-        if [ -f "3d_commits.gif" ]; then
-          echo "✅ Found 3d_commits.gif, committing..."
-          git add 3d_commits.gif
-          git commit -m "Update 3D commit graph GIF" --allow-empty
-          git push origin main
-        else
-          echo "❌ No 3d_commits.gif found after generation!"
-          exit 1
-        fi
-
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add 3d_commits.gif
+        # Only commit if the file has actually changed
+        git commit -m "Update 3D commit graph GIF" || echo "No changes to commit"
+        git push
