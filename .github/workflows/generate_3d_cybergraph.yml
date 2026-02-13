@@ -1,9 +1,9 @@
-name: Generate 3D Cyber Graph (Final Fix)
+name: Generate 3D Cyber Graph
 
 on:
   schedule:
-    - cron: "0 0 * * *"
-  workflow_dispatch:
+    - cron: "0 0 * * *"  # Runs every day at midnight
+  workflow_dispatch:      # Allows you to click 'Run workflow' manually
 
 permissions:
   contents: write
@@ -13,23 +13,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout your main code
+      # 1. Checkout the repository content
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      # 2. Set up Python
+      # 2. Set up Python environment
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
 
-      # 3. Install the tools we need
+      # 3. Install dependencies
       - name: Install dependencies
         run: |
           sudo apt-get install -y ffmpeg
           pip install matplotlib PyGithub numpy pillow
 
-      # 4. Run your custom Python script
+      # 4. Run your Python script
       - name: Generate GIF
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -37,15 +37,20 @@ jobs:
         run: |
           python github_3d_commits.py
 
-      # 5. Force save the GIF to the main branch
+      # 5. Commit and push (With Fix for "Fetch First" Error)
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Force add the file (ignores .gitignore)
+          # Stage the file
           git add -f cyber_graph.gif
           
-          # Commit and push
+          # Commit locally
           git commit -m "Update Cyber Graph" || echo "No changes to commit"
-          git push
+          
+          # --- FIX: Pull latest changes (like your README edits) to avoid conflict ---
+          git pull --rebase origin main
+          
+          # Now push safely
+          git push origin main
