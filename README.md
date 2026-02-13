@@ -1,4 +1,4 @@
-### 3D Commit Graph
+
 <div align="center">
   <img src="cyber_graph.gif" width="100%" alt="3D Cyber Graph" />
 </div>
