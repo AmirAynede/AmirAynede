@@ -1,9 +1,5 @@
 ### 3D Commit Graph
-<div align="center">
-  <img src="3d_commits.gif" width="600" alt="3D Contribution Graph" />
-  <br/>
-  <sub>Data updated daily via GitHub Actions</sub>
-</div>
+![Cyber Graph](./cyber_graph.gif)
 
 
 ---
