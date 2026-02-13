@@ -136,8 +136,8 @@ if __name__ == "__main__":
         ani = animation.FuncAnimation(fig, update, frames=np.arange(0, 360, 2), fargs=(ax,), interval=50)
         
         # Save
-        ani.save('3d_commits.gif', writer='pillow', fps=20)
-        print("Done! Saved to 3d_commits.gif")
+        ani.save('cyber_graph.gif', writer='pillow', fps=20)
+        print("Done! Saved to cyber_graph.gif")
         
     except Exception as e:
         print(f"Error: {e}")
