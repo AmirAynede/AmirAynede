@@ -12,14 +12,14 @@ TOKEN = os.getenv('GITHUB_TOKEN')
 WEEKS_TO_SHOW = 26
 
 def get_commit_data():
-    # FIXED: Use the new Auth method to silence warnings
+    # Authenticate
     auth = Auth.Token(TOKEN)
     g = Github(auth=auth)
     user = g.get_user(USERNAME)
     
     commit_matrix = np.zeros((7, WEEKS_TO_SHOW))
     
-    # FIXED: Use UTC timezone explicitly to match GitHub's data
+    # Use UTC to match GitHub's timestamps
     today = datetime.now(timezone.utc)
     start_date = today - timedelta(weeks=WEEKS_TO_SHOW)
     
@@ -31,7 +31,8 @@ def get_commit_data():
     for event in events:
         if event.type == "PushEvent":
             date = event.created_at
-            # Ensure the event date is also treated as UTC (just in case)
+            
+            # 1. FIX TIMEZONE (Offset-naive vs Offset-aware)
             if date.tzinfo is None:
                 date = date.replace(tzinfo=timezone.utc)
             
@@ -43,7 +44,18 @@ def get_commit_data():
             day_idx = date.weekday()
             
             if 0 <= week_idx < WEEKS_TO_SHOW:
-                commit_matrix[day_idx][week_idx] += event.payload.size
+                # 2. FIX PAYLOAD ERROR (Dict vs Object)
+                payload = event.payload
+                commit_size = 0
+                
+                # Check if it's a dictionary (like in your error log)
+                if isinstance(payload, dict):
+                    commit_size = payload.get('size', 0)
+                # Check if it's an object (standard PyGithub behavior)
+                else:
+                    commit_size = getattr(payload, 'size', 0)
+                
+                commit_matrix[day_idx][week_idx] += commit_size
                 count += 1
     
     print(f"Found {count} push events in the last {WEEKS_TO_SHOW} weeks.")
@@ -91,7 +103,6 @@ if __name__ == "__main__":
     try:
         data = get_commit_data()
         
-        # Fallback if no data found (avoids empty graph crash)
         if data.sum() == 0:
             print("No recent push data found. Generating demo pattern...")
             data = np.random.randint(0, 5, (7, WEEKS_TO_SHOW))
@@ -107,5 +118,4 @@ if __name__ == "__main__":
         
     except Exception as e:
         print(f"CRITICAL ERROR: {e}")
-        # Re-raise the error so the GitHub Action turns RED if it fails
         raise e
