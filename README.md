@@ -12,9 +12,8 @@ At the **Department of Pharmacy and Biotechnology (FaBiT)**
 **Alma Mater Studiorum – University of Bologna**, Italy
 
 I am interested in:
-- **Computational Biology** & Structural Bioinformatics  
-- **Cancer clinical data bioinformatics**
-- **Machine Learning** in genomics  
+- **Biologically Informed Generative Modeling (iVAE)**  
+- **Reconstructive Signaling Dynamics in Multi-Omics**
 
 ---
 
