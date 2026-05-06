@@ -5,8 +5,6 @@
 
 ---
 
-## About Me
-
 I am a **Master’s student in Bioinformatics**  
 At the **Department of Pharmacy and Biotechnology (FaBiT)**  
 **Alma Mater Studiorum – University of Bologna**, Italy
@@ -17,7 +15,7 @@ I am interested in:
 
 ---
 
-## My Projects
+## Projects
 
 ### [LB2-project-Group-1](https://github.com/AmirAynede/LB2-project-Group-1)
 ### [LC25000-Cancer-Classification](https://github.com/AmirAynede/LC25000-Cancer-Classification)
