@@ -9,10 +9,6 @@ I am a **Master’s student in Bioinformatics**
 At the **Department of Pharmacy and Biotechnology (FaBiT)**  
 **Alma Mater Studiorum – University of Bologna**, Italy
 
-I am interested in:
-- **Biologically Informed Generative Modeling (iVAE)**  
-- **Reconstructive Signaling Dynamics in Multi-Omics**
-
 ---
 
 ## Projects
